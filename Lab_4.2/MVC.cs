@@ -45,18 +45,21 @@ namespace Lab_4._2
         }
         public void setValue(int value, int index)
         {
-            if ((index != 0 && index < list.Count-1) &&
+            if (value >= 0 && value <= 100)
+            {
+                if ((index != 0 && index < list.Count - 1) &&
                 (list[index - 1].getValue() <= value && value <= list[index + 1].getValue()))
-            {
-                list[index].setValue(value);
-            }
-            else if ((index == 0 && list.Count > 1) && value <= list[index + 1].getValue())
-            {
-                list[index].setValue(value);
-            }
-            else if (index == list.Count - 1 && list[index - 1].getValue() <= value)
-            {
-                list[index].setValue(value);
+                {
+                    list[index].setValue(value);
+                }
+                else if ((index == 0 && list.Count > 1) && value <= list[index + 1].getValue())
+                {
+                    list[index].setValue(value);
+                }
+                else if (index == list.Count - 1 && list[index - 1].getValue() <= value)
+                {
+                    list[index].setValue(value);
+                }
             }
 
             Update();
