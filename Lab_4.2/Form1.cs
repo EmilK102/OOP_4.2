@@ -18,7 +18,7 @@ namespace Lab_4._2
             checker.Update();
         }
 
-        private void UpdateFromModel(object sender, EventArgs e)
+        private void UpdateFromModel(object sender, EventArgs e) //Обновляем все объекты
         {
             textBoxA.Text = checker.getValue(0).ToString();
             textBoxB.Text = checker.getValue(1).ToString();
@@ -33,7 +33,7 @@ namespace Lab_4._2
             trackBarC.Value = checker.getValue(2);
         }
 
-        public void loadFile()
+        public void loadFile() //Загрузка
         {
             FileInfo fileInfo = new FileInfo(path);
             if (fileInfo.Exists)
